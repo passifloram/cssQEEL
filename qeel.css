@@ -839,9 +839,9 @@ body .footer-container > .footer-img {
   overflow: hidden;
 
   color: var(--textColorAccent) !important;
-  background: var(--neutral) !important;
-  border: 1px solid var(--neutralDarker);
-  border-radius: var(--radius-mini);
+  /*background: var(--neutral) !important;*/
+  /*border: 1px solid var(--neutralDarker);*/
+  /*border-radius: var(--radius-mini);*/
   box-sizing: border-box;
 
   font-family: var(--font);
@@ -884,6 +884,7 @@ body .footer-container > .footer-img {
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1px;
+display:none;
 }
 
 /* Code londonien placé à droite */
@@ -963,7 +964,7 @@ body .footer-container > .footer-img {
   border-radius: 2px;
 
   font-family: monospace;
-  font-size: 6px;
+  font-size: 9px;
   font-weight: 800;
   letter-spacing: 1.2px;
   line-height: 17px;
