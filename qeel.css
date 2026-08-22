@@ -944,7 +944,7 @@ display:none;
   box-sizing: border-box;
 
   font-size: var(--normal-size);
-  line-height: 15px;
+  line-height: 10px;
   text-align: justify;
 }
 
