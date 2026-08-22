@@ -733,7 +733,7 @@ body .qeel-stats + .qeel {
   margin-bottom: 20px;
   padding: 15px 0;
 
-  background: var(--transparent-two);
+  /*background: var(--transparent-two);*/
   border-radius: var(--radius-normal);
 }
 
@@ -764,7 +764,7 @@ body div.footer-container {
   float: none !important;
   clear: both !important;
 
-  background: var(--transparent-one);
+  /*background: var(--transparent-one);*/
   border-radius: var(--radius-normal);
   box-sizing: border-box !important;
 }
