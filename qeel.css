@@ -933,14 +933,14 @@ display:none;
 
   width: 430px;
   height: 101px;
-  padding: 8px 10px;
+  padding: 5px 8px;
   overflow-x: hidden;
   overflow-y: auto;
 
   color: var(--textColor);
-  background: var(--neutral);
+  /*background: var(--neutral);
   border: 1px solid var(--neutralDarker);
-  border-radius: var(--radius-normal);
+  border-radius: var(--radius-normal);*/
   box-sizing: border-box;
 
   font-size: var(--normal-size);
