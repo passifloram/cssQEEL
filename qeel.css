@@ -934,8 +934,9 @@ display:none;
   width: 430px;
   height: 101px;
   padding: 5px 8px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  /*overflow-x: hidden;
+  overflow-y: auto;*/
+   overflow:hidden;
 
   color: var(--textColor);
   /*background: var(--neutral);
