@@ -944,7 +944,7 @@ display:none;
   border-radius: var(--radius-normal);*/
   box-sizing: border-box;
 
-  font-size: var(--normal-size);
+  font-size: var(--little-size);
   line-height: 10px;
   text-align: justify;
 }
