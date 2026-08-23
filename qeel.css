@@ -284,17 +284,17 @@
 /* Couleurs et images des groupes */
 
 .qeel-group.qeel-wf {
-  --group-colour: #a6510c;
+  --group-colour: #C3681Dc;
   --group-image: url("https://i.postimg.cc/xCJQy9JL/fuckdatshit3.gif");
 }
 
 .qeel-group.qeel-dc {
-  --group-colour: #672e22;
+  --group-colour: #C4716E;
   --group-image: url("https://i.postimg.cc/vBgyLGg7/fuckdatshit2.gif");
 }
 
 .qeel-group.qeel-sd {
-  --group-colour: #8E8ECD;
+  --group-colour: #7f7fb8;
   --group-image: url("https://i.postimg.cc/zBbNSqbC/fuckdatshit.gif");
 }
 
