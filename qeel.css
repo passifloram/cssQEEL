@@ -1043,7 +1043,7 @@ display:none;
 .footer-img::after {
   position: absolute;
   right: 7px;
-  bottom: 7px;
+  bottom: 2px;
   left: 7px;
 
   display: flex;
@@ -1052,7 +1052,7 @@ display:none;
 
   min-height: 18px;
   padding: 2px 6px;
-  content: "LONDON · 51,5085° N";
+  content: "LONDON · CAM 05";
 
   color: var(--stay-white);
   /* background: rgba(20, 18, 30, .58);
