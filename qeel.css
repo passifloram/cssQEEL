@@ -5752,19 +5752,12 @@ html[data-color-scheme] .main_forum #page-header .fiche-fond > .up.up{
 
 /* ================== RESPONSIVE DU FORUM UN PEU LMAO =================== */ 
 
-/* Position adaptative du forum sous la bannière */
-.main_forum{
-  position:relative;
-  z-index:10;
-  width:min(940px, calc(100% - 40px));
+/* Sur téléphone, le forum commence à mi-écran */
+@media screen and (max-width:768px){
 
-  margin:min(
-    calc(100vh - 30px),
-    calc(65vw + 55px)
-  ) auto 40px !important;
+  .main_forum{
+    margin-top:calc(50vh - 40px) !important;
+    margin-top:calc(50dvh - 40px) !important;
+  }
 
-  padding:22px;
-  background:var(--forum-overlay) !important;
-  border:1px solid var(--forum-overlay-border) !important;
-  border-radius:var(--radius-medium);
 }
