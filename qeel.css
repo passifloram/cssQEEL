@@ -48,7 +48,6 @@
    - NOUVEAU PROFIL A VOLETS BITCH
    - MINI PROFIL DES MESSAGES A CING ONGLETS BITCH
    - CORRECTIF BITCH
-   - RESPONSIVE DU FORUM
    ========================================================== */
 
 
@@ -5750,46 +5749,3 @@ html[data-color-scheme] .main_forum #page-header .fiche-fond > .up.up{
   backdrop-filter:none !important;
 }
 
-/* ================== RESPONSIVE DU FORUM UN PEU LMAO =================== */ 
-
-/* Sur téléphone, le forum commence à mi-écran */
-@media screen and (max-width:768px){
-
-  .main_forum{
-    margin-top:calc(50vh - 40px) !important;
-    margin-top:calc(50dvh - 40px) !important;
-  }
-
-}
-
-/* Taille minimale du header sur téléphone tactile */
-@media (pointer:coarse){
-
-  /* Bannières light et dark statiques */
-  #header{
-    background-size:
-      clamp(780px, calc(100vw - 40px), 820px)
-      auto !important;
-
-    background-position:center 55px !important;
-    background-repeat:no-repeat !important;
-  }
-
-  /* Bannière dark animée */
-  .dark-banner-animation{
-    width:clamp(
-      780px,
-      calc(100vw - 40px),
-      820px
-    ) !important;
-
-    min-width:780px !important;
-    max-width:820px !important;
-    height:auto !important;
-
-    left:50% !important;
-    transform:translateX(-50%) !important;
-    object-fit:contain !important;
-  }
-
-}
