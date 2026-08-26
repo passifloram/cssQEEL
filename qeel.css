@@ -960,8 +960,8 @@ display:none;
   margin: 0 0 7px;
   padding: 0 7px;
 
-  color: var(--stay-white);
-  background: var(--gradient-one);
+  color: var(--textColorAccent);
+  /*background: var(--gradient-one);*/
   border-radius: 2px;
 
   font-family: monospace;
