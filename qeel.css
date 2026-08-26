@@ -962,6 +962,9 @@ display:none;
 
   color: var(--textColorAccent);
   /*background: var(--gradient-one);*/
+  background:transparent !important;
+  background-color:transparent !important;
+  background-image:none !important;
   border-radius: 2px;
 
   font-family: monospace;
