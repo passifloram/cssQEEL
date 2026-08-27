@@ -979,7 +979,7 @@ display:none;
 /* Numéro de dossier */
 
 .footer-credits-title::after {
-  content: "REF. 51/07";
+  content: "REF. V10/SEPT26";
 
   padding-left: 8px;
   border-left: 1px solid rgba(255, 255, 255, .35);
