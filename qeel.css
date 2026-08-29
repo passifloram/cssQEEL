@@ -1808,17 +1808,20 @@ html[data-forum-layout="columns"] {
 
 #c1 { --forum-filler-image: url("https://i.postimg.cc/bv2DH887/cat1.jpg"); }
 #c2 { --forum-filler-image: url("https://i.postimg.cc/bv2DH887/cat1.jpg"); }
-#c3 { --forum-filler-image: url("https://i.postimg.cc/pXBjBkDt/catlondoniscalling.jpg"); }
+#c3 { --forum-filler-image: url("https://i.postimg.cc/DwN4XmVH/cat5-2.jpg"); }
 #c4 { --forum-filler-image: url("https://i.postimg.cc/0y4Kwrgh/cat4.jpg"); }
-#c5 { --forum-filler-image: url("https://i.postimg.cc/52rQCjd1/cat5.jpg"); }
+#c5 { --forum-filler-image: url("https://i.postimg.cc/cLztn6qz/cat4-2.jpg"); }
 #c6 { --forum-filler-image: url("https://i.postimg.cc/cLztn6qz/cat4-2.jpg"); }
+#c7 { --forum-filler-image: url("https://i.postimg.cc/dVfZyDPK/cat6-2.jpg"); }
 
 &[data-color-scheme="dark"] #c1 { --forum-filler-image: url("https://i.postimg.cc/Gps8JrdR/cat1-2.jpg"); }
 &[data-color-scheme="dark"] #c2 { --forum-filler-image: url("https://i.postimg.cc/Gps8JrdR/cat1-2.jpg"); }
-&[data-color-scheme="dark"] #c3 { --forum-filler-image: url("https://i.postimg.cc/t4ZXg4RD/londonpicadilly.png"); }
+&[data-color-scheme="dark"] #c3 { --forum-filler-image: url("https://i.postimg.cc/dVfZyDPK/cat6-2.jpg"); }
 &[data-color-scheme="dark"] #c4 { --forum-filler-image: url("https://i.postimg.cc/cLztn6qz/cat4-2.jpg"); }
-&[data-color-scheme="dark"] #c5 { --forum-filler-image: url("https://i.postimg.cc/W1yqktLv/cat6.jpg"); }
+&[data-color-scheme="dark"] #c5 { --forum-filler-image: url("https://i.postimg.cc/52rQCjd1/cat5.jpg"); }
 &[data-color-scheme="dark"] #c6 { --forum-filler-image: url("https://i.postimg.cc/DwN4Xmkh/cat7-2.jpg"); }
+&[data-color-scheme="dark"] #c7 { --forum-filler-image: url("https://i.postimg.cc/DwN4XmVH/cat5-2.jpg"); }
+
 
 /* GRILLE */
 
