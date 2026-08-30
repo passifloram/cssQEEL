@@ -5812,66 +5812,101 @@ html[data-color-scheme] .main_forum #page-header .fiche-fond > .up.up{
 
 
 /* ==========================================================
-   CARROUSEL HORIZONTAL DES SOUS-FORUMS
+   CARROUSEL CONDITIONNEL DES SOUS-FORUMS
+   Le carrousel apparaît uniquement lorsque le JavaScript
+   ajoute la classe .cj-subforum-carousel.
    ========================================================== */
+
+
+/* Ajuste la zone uniquement lorsqu’un carrousel est nécessaire */
 
 html[data-forum-layout="columns"]
 .category
-.forum_details.forum_subforums {
+.forum_details.forum_subforums:has(
+  #subforum.cj-subforum-carousel
+) {
+  display: flex !important;
+  align-items: center !important;
+
+  width: 100% !important;
   height: 34px !important;
   min-height: 34px !important;
   max-height: 34px !important;
+
+  margin-top: 6px !important;
+  padding: 0 !important;
   overflow: hidden !important;
 }
+
+
+/* Structure générale : flèche, lien, flèche */
 
 html[data-forum-layout="columns"]
 .category
 .forum_details.forum_subforums
 #subforum.cj-subforum-carousel {
   display: grid !important;
-  grid-template-columns: 25px minmax(0, 1fr) 25px;
-  align-items: center;
-  gap: 5px;
+  grid-template-columns: 25px minmax(0, 1fr) 25px !important;
+  align-items: center !important;
+  gap: 5px !important;
 
   width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+
   height: 34px !important;
+  min-height: 34px !important;
   max-height: 34px !important;
+
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden !important;
 }
 
-/* Fenêtre cachant les autres liens */
+
+/* Fenêtre qui masque les autres liens */
 
 html[data-forum-layout="columns"]
+.cj-subforum-carousel
 .cj-subforum-viewport {
+  display: block;
   width: 100%;
   min-width: 0;
   height: 28px;
   overflow: hidden;
 }
 
-/* Bande horizontale déplacée par le JavaScript */
+
+/* Bande horizontale contenant les liens */
 
 html[data-forum-layout="columns"]
+.cj-subforum-carousel
 .cj-subforum-track {
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  align-items: center !important;
 
-  width: 100%;
-  height: 28px;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 28px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
 
   transform: translate3d(0, 0, 0);
   transition: transform .3s ease;
+  will-change: transform;
 }
 
-/* Un sous-forum par écran */
+
+/* Un seul sous-forum occupe toute la fenêtre */
 
 html[data-forum-layout="columns"]
 .category
 .forum_details.forum_subforums
-#subforum
+#subforum.cj-subforum-carousel
 .cj-subforum-track > a {
+  position: relative !important;
+
   display: flex !important;
   flex: 0 0 100% !important;
   align-items: center !important;
@@ -5881,123 +5916,314 @@ html[data-forum-layout="columns"]
   min-width: 100% !important;
   max-width: 100% !important;
 
+  height: 28px !important;
+  min-height: 28px !important;
+  max-height: 28px !important;
+
   margin: 0 !important;
   padding: 2px 7px !important;
   overflow: hidden !important;
 
   color: var(--contrastLight) !important;
   background: transparent !important;
-  border: 0 !important;
+  background-color: transparent !important;
+  background-image: none !important;
 
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  font-family: var(--font) !important;
   font-size: 11px !important;
   font-weight: 700 !important;
+  letter-spacing: 0 !important;
   line-height: 18px !important;
+
   text-align: center !important;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
+  text-decoration: none !important;
+  text-overflow: ellipsis !important;
+  text-transform: uppercase !important;
   white-space: nowrap !important;
 
-  box-sizing: border-box;
+  box-sizing: border-box !important;
+  opacity: 1 !important;
+  transform: none !important;
+
+  transition: color .2s ease !important;
 }
+
+
+/* Survol du nom du sous-forum */
+
+html[data-forum-layout="columns"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-track > a:hover {
+  color: var(--accentClr) !important;
+  background: transparent !important;
+  background-image: none !important;
+
+  border: 0 !important;
+  box-shadow: none !important;
+
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 
 /* Neutralise les anciennes réductions automatiques */
 
 html[data-forum-layout="columns"]
 .category
 .forum_details.forum_subforums
-#subforum:has(a:nth-of-type(5))
+#subforum.cj-subforum-carousel:has(a:nth-of-type(5))
 .cj-subforum-track > a,
 
 html[data-forum-layout="columns"]
 .category
 .forum_details.forum_subforums
-#subforum:has(a:nth-of-type(7))
+#subforum.cj-subforum-carousel:has(a:nth-of-type(7))
 .cj-subforum-track > a {
   margin: 0 !important;
   padding: 2px 7px !important;
+
   font-size: 11px !important;
   line-height: 18px !important;
+  white-space: nowrap !important;
 }
 
-/* Flèches */
+
+/* Désactive l’ancienne ligne décorative des liens */
 
 html[data-forum-layout="columns"]
-.cj-subforum-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 25px;
-  height: 25px;
-  margin: 0;
-  padding: 0;
-
-  color: var(--contrastLight);
-  background: var(--neutral);
-  border: 1px solid var(--neutralDarker);
-  border-radius: var(--radius-mini);
-
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1;
-
-  cursor: pointer;
-  transition:
-    color .2s ease,
-    background .2s ease,
-    opacity .2s ease;
-}
-
-html[data-forum-layout="columns"]
-.cj-subforum-arrow:hover:not(:disabled) {
-  color: var(--accentClr);
-  background: var(--neutralDarker);
-}
-
-html[data-forum-layout="columns"]
-.cj-subforum-arrow:disabled {
-  opacity: .25;
-  cursor: default;
-}
-
-/* L’ancien soulignement animé n’est pas utile ici */
-
-html[data-forum-layout="columns"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
 .cj-subforum-track > a::after {
   display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+
   content: none !important;
+  background: none !important;
+
+  opacity: 0 !important;
+  transform: none !important;
 }
 
 
 /* ==========================================================
-   MODE NORMAL : retour à une liste ordinaire
+   FLÈCHES
+   ========================================================== */
+
+html[data-forum-layout="columns"]
+.cj-subforum-carousel
+.cj-subforum-arrow {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 25px !important;
+  min-width: 25px !important;
+  max-width: 25px !important;
+
+  height: 25px !important;
+  min-height: 25px !important;
+  max-height: 25px !important;
+
+  margin: 0 !important;
+  padding: 0 0 2px !important;
+
+  color: var(--contrastLight) !important;
+  background: var(--neutral) !important;
+  background-image: none !important;
+
+  border: 1px solid var(--neutralDarker) !important;
+  border-radius: var(--radius-mini) !important;
+  box-shadow: none !important;
+
+  font-family: Arial, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+
+  box-sizing: border-box !important;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+
+  transition:
+    color .2s ease,
+    background .2s ease,
+    border-color .2s ease,
+    opacity .2s ease;
+}
+
+
+/* Flèche de gauche */
+
+html[data-forum-layout="columns"]
+.cj-subforum-carousel
+.cj-subforum-arrow--previous {
+  grid-column: 1;
+}
+
+
+/* Fenêtre centrale */
+
+html[data-forum-layout="columns"]
+.cj-subforum-carousel
+.cj-subforum-viewport {
+  grid-column: 2;
+}
+
+
+/* Flèche de droite */
+
+html[data-forum-layout="columns"]
+.cj-subforum-carousel
+.cj-subforum-arrow--next {
+  grid-column: 3;
+}
+
+
+/* Survol des flèches */
+
+html[data-forum-layout="columns"]
+.cj-subforum-carousel
+.cj-subforum-arrow:hover:not(:disabled) {
+  color: var(--accentClr) !important;
+  background: var(--neutralDarker) !important;
+  border-color: var(--accentClr) !important;
+}
+
+
+/* Flèche désactivée au début ou à la fin */
+
+html[data-forum-layout="columns"]
+.cj-subforum-carousel
+.cj-subforum-arrow:disabled {
+  color: var(--contrastLight) !important;
+  opacity: .25 !important;
+  cursor: default !important;
+}
+
+
+/* Navigation au clavier */
+
+html[data-forum-layout="columns"]
+.cj-subforum-carousel
+.cj-subforum-arrow:focus-visible,
+
+html[data-forum-layout="columns"]
+.cj-subforum-carousel
+.cj-subforum-track > a:focus-visible {
+  outline: 1px solid var(--accentClr) !important;
+  outline-offset: 1px !important;
+}
+
+
+/* ==========================================================
+   LISTES SANS CARROUSEL
+   Elles conservent exactement l’apparence initiale.
+   ========================================================== */
+
+html[data-forum-layout="columns"]
+.category
+.forum_details.forum_subforums
+#subforum:not(.cj-subforum-carousel) {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+
+  width: 100%;
+  min-width: 0;
+  max-height: 36px;
+  overflow: hidden;
+}
+
+
+/* ==========================================================
+   MODE NORMAL
+   Les flèches disparaissent et les liens redeviennent une liste.
    ========================================================== */
 
 html[data-forum-layout="normal"]
+.cj-subforum-carousel
 .cj-subforum-arrow {
   display: none !important;
 }
 
+
 html[data-forum-layout="normal"]
+.category
+.forum_details.forum_subforums
 #subforum.cj-subforum-carousel {
   display: block !important;
+
+  width: 100% !important;
   height: auto !important;
+  min-height: 0 !important;
   max-height: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
   overflow: visible !important;
 }
 
-html[data-forum-layout="normal"]
-.cj-subforum-viewport {
-  width: auto;
-  height: auto;
-  overflow: visible;
-}
 
 html[data-forum-layout="normal"]
+.cj-subforum-carousel
+.cj-subforum-viewport {
+  display: block !important;
+
+  width: 100% !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+
+html[data-forum-layout="normal"]
+.cj-subforum-carousel
 .cj-subforum-track {
-  display: block;
-  width: auto;
-  height: auto;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 5px !important;
+
+  width: 100% !important;
+  height: auto !important;
+
   transform: none !important;
+}
+
+
+html[data-forum-layout="normal"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-track > a {
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+
+  margin: 0 !important;
+  padding: 2px 8px !important;
+
+  color: var(--stay-white) !important;
+  background:
+    linear-gradient(.07turn, var(--one), var(--two)) !important;
+
+  border-radius: var(--radius-mini) !important;
+
+  font-size: var(--little-size) !important;
+  line-height: inherit !important;
+  text-transform: uppercase !important;
+  white-space: normal !important;
 }
