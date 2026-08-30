@@ -51,6 +51,7 @@
    - CARROUSEL CONDITIONNEL DES SOUS-FORUMS
    - SWITCHEROO DEPLIANT
    - FENÊTRE DES SMILEYS
+   - STATISTIQUES AVEC DE GRANDS NOMBRES
    ========================================================== */
 
 
@@ -7085,4 +7086,37 @@ html#sceditor_smilies body#sce_smilies_body {
 
 #sce_smilies_body::-webkit-scrollbar-thumb:hover {
   background: var(--accentClr, #c97a64);
+}
+
+/* =======  STATISTIQUES AVEC DE GRANDS NOMBRES (sinon c'est moche) ======== */
+
+.forum_stats span {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+/* À partir de 10 000 */
+.forum_stats span.forum-stat-long {
+  font-size: 8px !important;
+  letter-spacing: -.02em;
+}
+
+/* À partir de 100 000 */
+.forum_stats span.forum-stat-very-long {
+  font-size: 7px !important;
+  letter-spacing: -.04em;
+}
+
+.forum_stats span.forum-stat-long strong,
+.forum_stats span.forum-stat-very-long strong {
+  margin-right: 2px !important;
+}
+
+/* Renforcement lorsque les forums sont en colonnes */
+body.forum-columns .forum_stats span.forum-stat-long,
+body.index-columns .forum_stats span.forum-stat-long,
+.category.is-columns .forum_stats span.forum-stat-long {
+  font-size: 7.5px !important;
 }
