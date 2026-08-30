@@ -5814,12 +5814,12 @@ html[data-color-scheme] .main_forum #page-header .fiche-fond > .up.up{
 /* ==========================================================
    CARROUSEL CONDITIONNEL DES SOUS-FORUMS
    - Soulignement animé en mode colonnes
-   - Gradients en mode normal
+   - Gradient ajusté au texte en mode normal
    ========================================================== */
 
 
 /* ==========================================================
-   STRUCTURE GÉNÉRALE DU CARROUSEL
+   STRUCTURE GÉNÉRALE
    ========================================================== */
 
 html
@@ -5841,7 +5841,7 @@ html
 }
 
 
-/* Flèche gauche, lien central, flèche droite */
+/* Flèche gauche, fenêtre centrale, flèche droite */
 
 html
 .category
@@ -5888,7 +5888,7 @@ html
 }
 
 
-/* Bande horizontale */
+/* Bande horizontale déplacée par le JavaScript */
 
 html
 .cj-subforum-carousel
@@ -5939,7 +5939,13 @@ html
   padding: 2px 7px !important;
   overflow: hidden !important;
 
+  color: var(--contrastLight) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
   border: 0 !important;
+  border-radius: 0 !important;
   box-shadow: none !important;
 
   font-family: var(--font) !important;
@@ -5950,7 +5956,6 @@ html
 
   text-align: center !important;
   text-decoration: none !important;
-  text-overflow: ellipsis !important;
   text-transform: uppercase !important;
   white-space: nowrap !important;
 
@@ -5960,8 +5965,8 @@ html
 
   transition:
     color .25s ease,
-    background .25s ease,
-    opacity .25s ease !important;
+    opacity .25s ease,
+    transform .25s ease !important;
 }
 
 
@@ -5970,13 +5975,17 @@ html
 html
 .category
 .forum_details.forum_subforums
-#subforum.cj-subforum-carousel:has(a:nth-of-type(5))
+#subforum.cj-subforum-carousel:has(
+  .cj-subforum-track > a:nth-child(5)
+)
 .cj-subforum-track > a,
 
 html
 .category
 .forum_details.forum_subforums
-#subforum.cj-subforum-carousel:has(a:nth-of-type(7))
+#subforum.cj-subforum-carousel:has(
+  .cj-subforum-track > a:nth-child(7)
+)
 .cj-subforum-track > a {
   margin: 0 !important;
   padding: 2px 7px !important;
@@ -5989,7 +5998,7 @@ html
 
 /* ==========================================================
    MODE DEUX COLONNES
-   Liens transparents avec soulignement animé
+   Texte transparent avec soulignement animé
    ========================================================== */
 
 html[data-forum-layout="columns"]
@@ -6007,7 +6016,37 @@ html[data-forum-layout="columns"]
 }
 
 
-/* Survol du texte en mode colonnes */
+/* L’étiquette reste sans gradient en colonnes */
+
+html[data-forum-layout="columns"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-label {
+  display: inline !important;
+  flex: none !important;
+
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: inherit !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  border-radius: 0 !important;
+
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+
+/* Survol du texte en colonnes */
 
 html[data-forum-layout="columns"]
 .category
@@ -6025,7 +6064,7 @@ html[data-forum-layout="columns"]
 }
 
 
-/* Soulignement animé en mode colonnes */
+/* Soulignement animé en colonnes */
 
 html[data-forum-layout="columns"]
 .category
@@ -6064,7 +6103,7 @@ html[data-forum-layout="columns"]
 }
 
 
-/* Apparition du soulignement au survol */
+/* Apparition du soulignement */
 
 html[data-forum-layout="columns"]
 .category
@@ -6078,14 +6117,52 @@ html[data-forum-layout="columns"]
 
 /* ==========================================================
    MODE NORMAL
-   Liens avec gradients, comme avant
+   Gradient limité à la largeur du texte
    ========================================================== */
+
+/* Le grand lien nécessaire au déplacement reste transparent */
 
 html[data-forum-layout="normal"]
 .category
 .forum_details.forum_subforums
 #subforum.cj-subforum-carousel
 .cj-subforum-track > a {
+  color: var(--stay-white) !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  border-radius: 0 !important;
+
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+/* Le gradient est appliqué uniquement à l’étiquette */
+
+html[data-forum-layout="normal"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-track > a
+.cj-subforum-label {
+  display: inline-flex !important;
+  flex: none !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: calc(100% - 10px) !important;
+
+  min-height: 24px !important;
+
+  margin: 0 !important;
+  padding: 2px 10px !important;
+
   color: var(--stay-white) !important;
 
   background:
@@ -6096,19 +6173,27 @@ html[data-forum-layout="normal"]
     ) !important;
 
   border-radius: var(--radius-mini) !important;
+  box-sizing: border-box !important;
 
-  opacity: 1 !important;
-  transform: none !important;
+  overflow: hidden !important;
+  text-align: center !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+
+  transition:
+    color .25s ease,
+    background .25s ease !important;
 }
 
 
-/* Alternance du gradient selon le lien */
+/* Alternance du gradient */
 
 html[data-forum-layout="normal"]
 .category
 .forum_details.forum_subforums
 #subforum.cj-subforum-carousel
-.cj-subforum-track > a:nth-child(2n) {
+.cj-subforum-track > a:nth-child(2n)
+.cj-subforum-label {
   background:
     linear-gradient(
       .07turn,
@@ -6118,13 +6203,14 @@ html[data-forum-layout="normal"]
 }
 
 
-/* Survol en mode normal */
+/* Survol du gradient */
 
 html[data-forum-layout="normal"]
 .category
 .forum_details.forum_subforums
 #subforum.cj-subforum-carousel
-.cj-subforum-track > a:hover {
+.cj-subforum-track > a:hover
+.cj-subforum-label {
   color: var(--stay-white) !important;
 
   background:
@@ -6133,13 +6219,10 @@ html[data-forum-layout="normal"]
       var(--two),
       var(--three)
     ) !important;
-
-  opacity: 1 !important;
-  transform: none !important;
 }
 
 
-/* Aucun soulignement sous les boutons en mode normal */
+/* Aucun soulignement sous les gradients */
 
 html[data-forum-layout="normal"]
 .category
@@ -6264,7 +6347,7 @@ html
 
 /* ==========================================================
    LISTES SANS CARROUSEL
-   Aucun changement graphique.
+   Aucun changement graphique
    ========================================================== */
 
 html
@@ -6280,105 +6363,4 @@ html
   max-height: 36px;
 
   overflow: hidden;
-}
-
-
-/* ==========================================================
-   GRADIENT AJUSTÉ AU TEXTE — MODE NORMAL
-   ========================================================== */
-
-/* Le grand lien reste transparent */
-
-html[data-forum-layout="normal"]
-.category
-.forum_details.forum_subforums
-#subforum.cj-subforum-carousel
-.cj-subforum-track > a {
-  background: transparent !important;
-  background-color: transparent !important;
-  background-image: none !important;
-  border-radius: 0 !important;
-}
-
-
-/* L’étiquette prend uniquement la largeur nécessaire */
-
-html[data-forum-layout="normal"]
-.cj-subforum-track
-.cj-subforum-label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  width: max-content;
-  max-width: 100%;
-
-  min-height: 24px;
-  padding: 2px 10px;
-
-  color: var(--stay-white);
-  background:
-    linear-gradient(
-      .07turn,
-      var(--one),
-      var(--two)
-    );
-
-  border-radius: var(--radius-mini);
-  box-sizing: border-box;
-
-  overflow: hidden;
-  text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-
-  transition:
-    color .25s ease,
-    background .25s ease;
-}
-
-
-/* Gradient alternatif pour un lien sur deux */
-
-html[data-forum-layout="normal"]
-.cj-subforum-track > a:nth-child(2n)
-.cj-subforum-label {
-  background:
-    linear-gradient(
-      .07turn,
-      var(--three),
-      var(--one)
-    );
-}
-
-
-/* Survol */
-
-html[data-forum-layout="normal"]
-.cj-subforum-track > a:hover
-.cj-subforum-label {
-  color: var(--stay-white);
-
-  background:
-    linear-gradient(
-      .07turn,
-      var(--two),
-      var(--three)
-    );
-}
-
-
-/* Mode colonnes : l’étiquette reste transparente */
-
-html[data-forum-layout="columns"]
-.cj-subforum-track
-.cj-subforum-label {
-  display: inline;
-  width: auto;
-  max-width: 100%;
-  padding: 0;
-
-  color: inherit;
-  background: transparent;
-  border-radius: 0;
 }
