@@ -6916,3 +6916,27 @@ html[data-forum-layout="normal"]
   min-width: 30px !important;
   max-width: 30px !important;
 }
+
+/* Switcheroo au-dessus du bouton de bannière */
+#switcheroo,
+.switcheroo {
+  position: relative;
+  z-index: 999999 !important;
+  overflow: visible !important;
+}
+
+/* Conteneur déplié et comptes */
+#switcheroo .switcheroo__squircles,
+#switcheroo .switcheroo__squircle,
+#switcheroo .switcheroo__form,
+.switcheroo .switcheroo__squircles {
+  position: relative;
+  z-index: 1000000 !important;
+}
+
+/* Le parent ne doit pas découper la liste dépliée */
+body:has(#switcheroo) #switcheroo-container,
+body:has(#switcheroo) .switcheroo-container {
+  overflow: visible !important;
+  z-index: 999999 !important;
+}
