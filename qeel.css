@@ -1795,7 +1795,7 @@ html body #main-content .footer-container {
 }
 
 
-/* INDEX FORUM EN DEUX COLONNES AVEC CARTES DÉCORATIVES */
+/* INDEX FORUMs EN DEUX COLONNES AVEC CARTES DÉCORATIVES */
 
 html,
 body {
@@ -1822,6 +1822,74 @@ html[data-forum-layout="columns"] {
 &[data-color-scheme="dark"] #c6 { --forum-filler-image: url("https://i.postimg.cc/DwN4Xmkh/cat7-2.jpg"); }
 &[data-color-scheme="dark"] #c7 { --forum-filler-image: url("https://i.postimg.cc/DwN4XmVH/cat5-2.jpg"); }
 
+   /* ==========================================================
+   IMAGES DES SOUS-FORUMS — MODE CLAIR
+   ========================================================== */
+
+/* THE GOINGS-ON */
+html[data-forum-layout="columns"] #f7 {
+  --forum-filler-image:
+    url("https://i.postimg.cc/XZ4Y4RrL/cat1.jpg");
+}
+
+/* GROWING SIDEWAYS */
+html[data-forum-layout="columns"] #f12 {
+  --forum-filler-image:
+    url("https://i.postimg.cc/67tptk8j/cat3.jpg");
+}
+
+/* EAST LONDON */
+html[data-forum-layout="columns"] #f18 {
+  --forum-filler-image:
+    url("https://i.postimg.cc/dh80MsV9/cat4.jpg");
+}
+
+/* WEST LONDON */
+html[data-forum-layout="columns"] #f17 {
+  --forum-filler-image:
+    url("https://i.postimg.cc/ZWrqkb5D/cat5.jpg");
+}
+
+/* ELSEWHERE */
+html[data-forum-layout="columns"] #f20 {
+  --forum-filler-image:
+    url("https://i.postimg.cc/Jsbhwrz6/cat6.jpg");
+}
+
+
+/* ==========================================================
+   IMAGES DES SOUS-FORUMS — MODE SOMBRE
+   ========================================================== */
+
+/* THE GOINGS-ON */
+html[data-forum-layout="columns"][data-color-scheme="dark"] #f7 {
+  --forum-filler-image:
+    url("https://i.postimg.cc/KKx8x61p/cat1-2.jpg");
+}
+
+/* GROWING SIDEWAYS */
+html[data-forum-layout="columns"][data-color-scheme="dark"] #f12 {
+  --forum-filler-image:
+    url("https://i.postimg.cc/rDSp6VwG/cat4-2.jpg");
+}
+
+/* EAST LONDON */
+html[data-forum-layout="columns"][data-color-scheme="dark"] #f18 {
+  --forum-filler-image:
+    url("https://i.postimg.cc/k2x5rJgv/cat5-2.jpg");
+}
+
+/* WEST LONDON */
+html[data-forum-layout="columns"][data-color-scheme="dark"] #f17 {
+  --forum-filler-image:
+    url("https://i.postimg.cc/yDFNq18f/cat6-2.jpg");
+}
+
+/* ELSEWHERE */
+html[data-forum-layout="columns"][data-color-scheme="dark"] #f20 {
+  --forum-filler-image:
+    url("https://i.postimg.cc/hJvQp5ch/cat7.png");
+}
 
 /* GRILLE */
 
