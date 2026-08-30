@@ -5830,16 +5830,10 @@ html[data-color-scheme] .main_forum #page-header .fiche-fond > .up.up{
 }
 
 
-/* ==========================================================
-   CARROUSEL CONDITIONNEL DES SOUS-FORUMS
-   - Soulignement animé en mode colonnes
-   - Gradient ajusté au texte en mode normal
-   ========================================================== */
+/* ============= CARROUSEL DES SOUS-FORUMS =========== */
 
 
-/* ==========================================================
-   STRUCTURE GÉNÉRALE
-   ========================================================== */
+/* ================ STRUCTURE GÉNÉRALE    ======== */
 
 html
 .category
@@ -6015,10 +6009,7 @@ html
 }
 
 
-/* ==========================================================
-   MODE DEUX COLONNES
-   Texte transparent avec soulignement animé
-   ========================================================== */
+/* ========  MODE DEUX COLONNES =========== */
 
 html[data-forum-layout="columns"]
 .category
@@ -6134,10 +6125,7 @@ html[data-forum-layout="columns"]
 }
 
 
-/* ==========================================================
-   MODE NORMAL
-   Gradient limité à la largeur du texte
-   ========================================================== */
+/* ================== MODE NORMAL ============ */
 
 /* Le grand lien nécessaire au déplacement reste transparent */
 
@@ -6261,9 +6249,7 @@ html[data-forum-layout="normal"]
 }
 
 
-/* ==========================================================
-   FLÈCHES
-   ========================================================== */
+/* =================== FLÈCHES ============ */
 
 html
 .cj-subforum-carousel
@@ -6364,10 +6350,7 @@ html
 }
 
 
-/* ==========================================================
-   LISTES SANS CARROUSEL
-   Aucun changement graphique
-   ========================================================== */
+/* ================== LISTES SANS CARROUSEL ============ */
 
 html
 .category
@@ -6385,10 +6368,7 @@ html
 }
 
 
-/* ==========================================================
-   CORRECTION DÉFINITIVE — GRADIENTS DU MODE NORMAL
-   Neutralise les anciens gradients sur les liens entiers
-   ========================================================== */
+/* =========== GRADIENTS DU MODE NORMAL ========== */
 
 /* Tous les liens, pairs, impairs et survolés restent transparents */
 
@@ -6585,9 +6565,7 @@ html[data-forum-layout="normal"]
 }
 
 
-/* ==========================================================
-   SWITCHEROO DEPLIANT
-   ========================================================== */
+/* ============== SWITCHEROO DEPLIANT ========== */
 
 #switcheroo {
   position: relative !important;
@@ -6601,9 +6579,7 @@ html[data-forum-layout="normal"]
 }
 
 
-/* ==========================================================
-   BOUTON D’OUVERTURE
-   ========================================================== */
+/* ================== BOUTON D’OUVERTURE ============== */
 
 #switcheroo .cj-switcheroo-toggle {
   display: flex !important;
@@ -6657,9 +6633,7 @@ html[data-forum-layout="normal"]
 }
 
 
-/* ==========================================================
-   CONTENEUR DU MENU VERTICAL
-   ========================================================== */
+/* ================== CONTENEUR DU MENU VERTICAL =========== */
 
 #switcheroo .cj-switcheroo-dropdown {
   position: absolute !important;
@@ -6724,9 +6698,7 @@ html[data-forum-layout="normal"]
 }
 
 
-/* ==========================================================
-   LISTE VERTICALE
-   ========================================================== */
+/* ============== LISTE VERTICALE =========== */
 
 #switcheroo
 .cj-switcheroo-dropdown__list {
@@ -6810,7 +6782,7 @@ html[data-forum-layout="normal"]
 }
 
 
-/* Barre de défilement discrète s’il y a beaucoup de comptes */
+/* Barre de défilement */
 
 #switcheroo
 .cj-switcheroo-dropdown {
@@ -6934,9 +6906,7 @@ button.dark-banner-toggle {
   z-index: 999 !important;
 }
 
-/* =========================================================
-   RÉSUMÉS LONGS DU DIRECTORY — JUSQU’À 1000 CARACTÈRES
-   ========================================================= */
+/* ======= RÉSUMÉS LONGS DU DIRECTORY JUSQU’À 1000 CARACTÈRES ======== */
 
 .directory-list .directory-summary {
   /*
