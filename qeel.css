@@ -48,6 +48,7 @@
    - NOUVEAU PROFIL A VOLETS BITCH
    - MINI PROFIL DES MESSAGES A CING ONGLETS BITCH
    - CORRECTIF BITCH
+   - CARROUSSEL HORIZONTAL DES SOUS FORUMS 
    ========================================================== */
 
 
@@ -5809,3 +5810,194 @@ html[data-color-scheme] .main_forum #page-header .fiche-fond > .up.up{
   backdrop-filter:none !important;
 }
 
+
+/* ==========================================================
+   CARROUSEL HORIZONTAL DES SOUS-FORUMS
+   ========================================================== */
+
+html[data-forum-layout="columns"]
+.category
+.forum_details.forum_subforums {
+  height: 34px !important;
+  min-height: 34px !important;
+  max-height: 34px !important;
+  overflow: hidden !important;
+}
+
+html[data-forum-layout="columns"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel {
+  display: grid !important;
+  grid-template-columns: 25px minmax(0, 1fr) 25px;
+  align-items: center;
+  gap: 5px;
+
+  width: 100% !important;
+  height: 34px !important;
+  max-height: 34px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Fenêtre cachant les autres liens */
+
+html[data-forum-layout="columns"]
+.cj-subforum-viewport {
+  width: 100%;
+  min-width: 0;
+  height: 28px;
+  overflow: hidden;
+}
+
+/* Bande horizontale déplacée par le JavaScript */
+
+html[data-forum-layout="columns"]
+.cj-subforum-track {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 28px;
+
+  transform: translate3d(0, 0, 0);
+  transition: transform .3s ease;
+}
+
+/* Un sous-forum par écran */
+
+html[data-forum-layout="columns"]
+.category
+.forum_details.forum_subforums
+#subforum
+.cj-subforum-track > a {
+  display: flex !important;
+  flex: 0 0 100% !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+
+  margin: 0 !important;
+  padding: 2px 7px !important;
+  overflow: hidden !important;
+
+  color: var(--contrastLight) !important;
+  background: transparent !important;
+  border: 0 !important;
+
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  line-height: 18px !important;
+  text-align: center !important;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap !important;
+
+  box-sizing: border-box;
+}
+
+/* Neutralise les anciennes réductions automatiques */
+
+html[data-forum-layout="columns"]
+.category
+.forum_details.forum_subforums
+#subforum:has(a:nth-of-type(5))
+.cj-subforum-track > a,
+
+html[data-forum-layout="columns"]
+.category
+.forum_details.forum_subforums
+#subforum:has(a:nth-of-type(7))
+.cj-subforum-track > a {
+  margin: 0 !important;
+  padding: 2px 7px !important;
+  font-size: 11px !important;
+  line-height: 18px !important;
+}
+
+/* Flèches */
+
+html[data-forum-layout="columns"]
+.cj-subforum-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+
+  color: var(--contrastLight);
+  background: var(--neutral);
+  border: 1px solid var(--neutralDarker);
+  border-radius: var(--radius-mini);
+
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+
+  cursor: pointer;
+  transition:
+    color .2s ease,
+    background .2s ease,
+    opacity .2s ease;
+}
+
+html[data-forum-layout="columns"]
+.cj-subforum-arrow:hover:not(:disabled) {
+  color: var(--accentClr);
+  background: var(--neutralDarker);
+}
+
+html[data-forum-layout="columns"]
+.cj-subforum-arrow:disabled {
+  opacity: .25;
+  cursor: default;
+}
+
+/* L’ancien soulignement animé n’est pas utile ici */
+
+html[data-forum-layout="columns"]
+.cj-subforum-track > a::after {
+  display: none !important;
+  content: none !important;
+}
+
+
+/* ==========================================================
+   MODE NORMAL : retour à une liste ordinaire
+   ========================================================== */
+
+html[data-forum-layout="normal"]
+.cj-subforum-arrow {
+  display: none !important;
+}
+
+html[data-forum-layout="normal"]
+#subforum.cj-subforum-carousel {
+  display: block !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+html[data-forum-layout="normal"]
+.cj-subforum-viewport {
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+html[data-forum-layout="normal"]
+.cj-subforum-track {
+  display: block;
+  width: auto;
+  height: auto;
+  transform: none !important;
+}
