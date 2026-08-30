@@ -6851,3 +6851,68 @@ html[data-forum-layout="normal"]
     transition: none !important;
   }
 }
+
+/* Espacement vertical des comptes Switcheroo */
+
+#switcheroo
+.cj-switcheroo-dropdown__list {
+  gap: 9px !important;
+}
+
+#switcheroo
+.cj-switcheroo-dropdown__list
+[data-action="switcheroo"],
+
+#switcheroo
+.cj-switcheroo-dropdown__list
+[data-action="open-login"] {
+  flex: 0 0 30px !important;
+
+  width: 30px !important;
+  min-width: 30px !important;
+  max-width: 30px !important;
+
+  height: 30px !important;
+  min-height: 30px !important;
+  max-height: 30px !important;
+
+  margin: 0 !important;
+}
+
+
+/* L’avatar garde sa taille actuelle au centre de la zone */
+
+#switcheroo
+.cj-switcheroo-dropdown__list
+.switcheroo__avatar,
+
+#switcheroo
+.cj-switcheroo-dropdown__list
+.switcheroo__avatar img {
+  width: 25px !important;
+  min-width: 25px !important;
+  max-width: 25px !important;
+
+  height: 25px !important;
+  min-height: 25px !important;
+  max-height: 25px !important;
+}
+
+
+/* Le menu s’adapte aux zones légèrement plus larges */
+
+#switcheroo
+.cj-switcheroo-dropdown {
+  width: 44px !important;
+  min-width: 44px !important;
+  max-width: 44px !important;
+
+  padding: 6px !important;
+}
+
+#switcheroo
+.cj-switcheroo-dropdown__list {
+  width: 30px !important;
+  min-width: 30px !important;
+  max-width: 30px !important;
+}
