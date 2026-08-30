@@ -6382,3 +6382,187 @@ html
 
   overflow: hidden;
 }
+
+
+/* ==========================================================
+   CORRECTION DÉFINITIVE — GRADIENTS DU MODE NORMAL
+   Neutralise les anciens gradients sur les liens entiers
+   ========================================================== */
+
+/* Tous les liens, pairs, impairs et survolés restent transparents */
+
+html[data-forum-layout="normal"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-track > a,
+
+html[data-forum-layout="normal"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-track > a:nth-child(odd),
+
+html[data-forum-layout="normal"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-track > a:nth-child(even),
+
+html[data-forum-layout="normal"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-track > a:nth-of-type(odd),
+
+html[data-forum-layout="normal"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-track > a:nth-of-type(even),
+
+html[data-forum-layout="normal"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-track > a:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+
+/* Neutralise aussi les anciens pseudo-éléments éventuels */
+
+html[data-forum-layout="normal"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-track > a::before,
+
+html[data-forum-layout="normal"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-track > a::after {
+  display: none !important;
+
+  width: 0 !important;
+  height: 0 !important;
+
+  content: none !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  border: 0 !important;
+  box-shadow: none !important;
+
+  opacity: 0 !important;
+  transform: none !important;
+}
+
+
+/* Les conteneurs restent également transparents */
+
+html[data-forum-layout="normal"]
+#subforum.cj-subforum-carousel,
+
+html[data-forum-layout="normal"]
+#subforum.cj-subforum-carousel
+.cj-subforum-viewport,
+
+html[data-forum-layout="normal"]
+#subforum.cj-subforum-carousel
+.cj-subforum-track {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+
+/* Seule l’étiquette autour du texte possède un gradient */
+
+html[data-forum-layout="normal"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-track > a
+.cj-subforum-label {
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: calc(100% - 10px) !important;
+
+  min-height: 24px !important;
+
+  margin: 0 !important;
+  padding: 2px 10px !important;
+
+  color: var(--stay-white) !important;
+
+  background:
+    linear-gradient(
+      .07turn,
+      var(--one),
+      var(--two)
+    ) !important;
+
+  border-radius: var(--radius-mini) !important;
+  box-sizing: border-box !important;
+
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+
+/* Variante paire : seul le petit bouton change de gradient */
+
+html[data-forum-layout="normal"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-track > a:nth-child(even)
+.cj-subforum-label,
+
+html[data-forum-layout="normal"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-track > a:nth-of-type(even)
+.cj-subforum-label {
+  background:
+    linear-gradient(
+      .07turn,
+      var(--three),
+      var(--one)
+    ) !important;
+}
+
+
+/* Survol : toujours limité au petit bouton */
+
+html[data-forum-layout="normal"]
+.category
+.forum_details.forum_subforums
+#subforum.cj-subforum-carousel
+.cj-subforum-track > a:hover
+.cj-subforum-label {
+  background:
+    linear-gradient(
+      .07turn,
+      var(--two),
+      var(--three)
+    ) !important;
+}
