@@ -6933,3 +6933,95 @@ html body#phpbb > #switcheroo .switcheroo__squircle {
 button.dark-banner-toggle {
   z-index: 999 !important;
 }
+
+/* =========================================================
+   RÉSUMÉS LONGS DU DIRECTORY — JUSQU’À 1000 CARACTÈRES
+   ========================================================= */
+
+.directory-list .directory-summary {
+  /*
+   * Important : on retire le centrage flex.
+   * Sinon le début d’un long résumé peut être coupé.
+   */
+  display: block !important;
+
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  max-width: none;
+  max-height: none;
+
+  /*
+   * La carte conserve sa taille.
+   * Seul le résumé défile verticalement.
+   */
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior-y: contain;
+  scrollbar-gutter: stable;
+  touch-action: pan-y;
+
+  /*
+   * Le texte peut revenir à la ligne normalement,
+   * même en présence d’un mot ou d’un lien très long.
+   */
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+
+  /*
+   * Le résumé commence désormais en haut de la zone.
+   */
+  text-align: left;
+  padding: .8rem .9rem 1rem;
+
+  /*
+   * Conserve une zone fixe entre le pseudo
+   * et les informations du membre.
+   */
+  inset: 4.25rem .75rem 7.75rem;
+}
+
+/* Le défilement est activé lorsque le résumé devient visible. */
+.directory-list .directory-member:hover .directory-summary,
+.directory-list .directory-member:focus-within .directory-summary {
+  pointer-events: auto;
+}
+
+/* Scrollbar Firefox */
+.directory-list .directory-summary {
+  scrollbar-width: thin;
+  scrollbar-color:
+    var(--accentClr, #c97a64)
+    rgba(255, 255, 255, .12);
+}
+
+/* Scrollbar Chrome, Edge et Safari */
+.directory-list .directory-summary::-webkit-scrollbar {
+  width: 5px;
+}
+
+.directory-list .directory-summary::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, .1);
+  border-radius: 99px;
+}
+
+.directory-list .directory-summary::-webkit-scrollbar-thumb {
+  background: var(--accentClr, #c97a64);
+  border-radius: 99px;
+}
+
+.directory-list .directory-summary::-webkit-scrollbar-thumb:hover {
+  background: var(--accentClr, #c97a64);
+}
+
+/* Ajustement pour les cartes plus petites sur téléphone */
+@media (max-width: 600px) {
+  .directory-list .directory-summary {
+    inset: 3.75rem .5rem 6.5rem;
+    padding: .65rem .7rem .85rem;
+    font-size: .7rem;
+    line-height: 1.35;
+  }
+}
