@@ -6566,3 +6566,19 @@ html[data-forum-layout="normal"]
       var(--three)
     ) !important;
 }
+
+
+/* Directory — titre nominatif plus petit */
+.directory-registry-card
+.directory-registry-welcome
+.fiche-st t2 {
+  display: block;
+  min-width: 0;
+
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
