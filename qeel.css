@@ -50,6 +50,7 @@
    - CORRECTIF BITCH
    - CARROUSEL CONDITIONNEL DES SOUS-FORUMS
    - SWITCHEROO DEPLIANT
+   - FENÊTRE DES SMILEYS
    ========================================================== */
 
 
@@ -6994,4 +6995,94 @@ button.dark-banner-toggle {
     font-size: .7rem;
     line-height: 1.35;
   }
+}
+
+/* ========= FENÊTRE DES SMILEYS pcq je l'ai pété ======== */
+
+html#sceditor_smilies {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+
+html#sceditor_smilies body#sce_smilies_body {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  margin: 0 !important;
+  padding: 5px !important;
+
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    var(--accentClr, #c97a64)
+    rgba(0, 0, 0, .12);
+}
+
+#sce_smilies_body #smilies_header,
+#sce_smilies_body .smiley-element,
+#sce_smilies_body .clear {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+#sce_smilies_body #smilies_header {
+  margin: 0 0 10px !important;
+  padding: 0 !important;
+  text-align: center;
+}
+
+#sce_smilies_body #smilies_header form,
+#sce_smilies_body #smilies_header select {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+}
+
+#sce_smilies_body .smiley-element {
+  display: block !important;
+  padding: 0 5px 10px !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  overflow-wrap: normal !important;
+}
+
+#sce_smilies_body .smiley-element img {
+  display: inline-block !important;
+  max-width: 100% !important;
+  vertical-align: middle;
+}
+
+/* Chrome, Edge et Safari */
+#sce_smilies_body::-webkit-scrollbar {
+  width: 6px;
+  height: 0 !important;
+}
+
+#sce_smilies_body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, .12);
+  border-radius: 99px;
+}
+
+#sce_smilies_body::-webkit-scrollbar-thumb {
+  background: var(--accentClr, #c97a64);
+  border-radius: 99px;
+}
+
+#sce_smilies_body::-webkit-scrollbar-thumb:hover {
+  background: var(--accentClr, #c97a64);
 }
