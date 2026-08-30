@@ -1850,6 +1850,15 @@ html[data-forum-layout="columns"] {
     url("https://i.postimg.cc/Gps8JrdR/cat1-2.jpg");
 }
 
+   #f21 {
+      --forum-filler-image:
+         url("https://i.postimg.cc/gk18dzgD/swipetest.jpg");
+   }
+   #f23 {
+      --forum-filler-image:
+         url("https://i.postimg.cc/JzPDTjsW/afreshstart.jpg");
+   }
+
 
 /* SOUS-FORUMS — MODE SOMBRE */
 
@@ -1877,6 +1886,15 @@ html[data-forum-layout="columns"] {
   --forum-filler-image:
     url("https://i.postimg.cc/bv2DH887/cat1.jpg");
 }
+
+ &[data-color-scheme="dark"] #f21 {
+      --forum-filler-image:
+         url("https://i.postimg.cc/gk18dzgD/swipetest.jpg");
+   }
+   &[data-color-scheme="dark"] #f23 {
+      --forum-filler-image:
+         url("https://i.postimg.cc/JzPDTjsW/afreshstart.jpg");
+   }
    
 /* GRILLE */
 
