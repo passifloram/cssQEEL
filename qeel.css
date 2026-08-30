@@ -1850,11 +1850,11 @@ html[data-forum-layout="columns"] {
     url("https://i.postimg.cc/Gps8JrdR/cat1-2.jpg");
 }
 
-   #f21 {
+   #f86 {
       --forum-filler-image:
          url("https://i.postimg.cc/gk18dzgD/swipetest.jpg");
    }
-   #f23 {
+   #f13 {
       --forum-filler-image:
          url("https://i.postimg.cc/JzPDTjsW/afreshstart.jpg");
    }
@@ -1887,11 +1887,11 @@ html[data-forum-layout="columns"] {
     url("https://i.postimg.cc/bv2DH887/cat1.jpg");
 }
 
- &[data-color-scheme="dark"] #f21 {
+ &[data-color-scheme="dark"] #f86 {
       --forum-filler-image:
          url("https://i.postimg.cc/gk18dzgD/swipetest.jpg");
    }
-   &[data-color-scheme="dark"] #f23 {
+   &[data-color-scheme="dark"] #f13 {
       --forum-filler-image:
          url("https://i.postimg.cc/JzPDTjsW/afreshstart.jpg");
    }
