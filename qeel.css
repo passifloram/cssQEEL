@@ -7287,3 +7287,95 @@ form > .container > .message > .message_content.postbody.content {
     max-height: 140px !important;
   }
 }
+
+
+/* Lecture des MP uniquement */
+html body form .container > .message {
+  display: grid !important;
+  grid-template-columns: 252px minmax(0, 1fr) !important;
+  grid-template-rows: auto 1fr !important;
+  gap: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+html body form .container > .message > .message_infos {
+  grid-column: 1 / -1 !important;
+  grid-row: 1 !important;
+  min-width: 0 !important;
+}
+
+html body form .container > .message > .message_profil {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  position: static !important;
+  float: none !important;
+  transform: none !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 18px 15px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  overflow-wrap: anywhere;
+}
+
+html body form .container > .message > .message_profil img {
+  position: static !important;
+  float: none !important;
+  transform: none !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 220px !important;
+  max-height: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+html body form .container > .message > .message_content.postbody.content {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  position: static !important;
+  float: none !important;
+  clear: none !important;
+  transform: none !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 24px 28px !important;
+  box-sizing: border-box !important;
+  overflow-wrap: anywhere;
+  overflow-x: auto;
+}
+
+@media (max-width: 700px) {
+  html body form .container > .message {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto auto auto !important;
+  }
+
+  html body form .container > .message > .message_profil {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--neutralDark);
+  }
+
+  html body form .container > .message > .message_profil img {
+    max-width: 110px !important;
+    max-height: 176px !important;
+    object-fit: contain !important;
+  }
+
+  html body form .container > .message > .message_content.postbody.content {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+    padding: 18px !important;
+  }
+}
