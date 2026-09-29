@@ -7181,201 +7181,114 @@ form[name="privmsg_list"] > .links_bar {
 }
 form[name="privmsg_list"] > .links_bar > .right { float:none!important; }
 
-/* Lecture : placement explicite des trois enfants du template. */
-form > .container > .message {
+/* LECTURE MP : bloc unique, independant des ancetres form/container. */
+body#phpbb .message:has(> .message_profil) {
   display:grid!important;
-  grid-template-columns:180px minmax(0,1fr)!important;
-  grid-template-rows:auto minmax(0,1fr)!important;
-  gap:0!important; width:100%!important; min-width:0!important;
-  box-sizing:border-box; align-items:stretch;
+  grid-template-columns:252px minmax(0,1fr)!important;
+  grid-template-rows:auto 1fr!important;
+  gap:0!important; min-width:0!important; width:100%!important;
+  box-sizing:border-box!important;
   background:var(--neutral); border:1px solid var(--neutralDark); border-radius:10px;
 }
-form > .container > .message > .message_infos {
+body#phpbb .message > .message_infos {
   grid-column:1 / -1!important; grid-row:1!important;
   display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
-  gap:10px 18px; padding:14px 18px; min-width:0;
+  gap:10px 18px; min-width:0; padding:14px 18px;
   border-bottom:1px solid var(--neutralDark); overflow-wrap:anywhere;
 }
-.message > .message_infos > span { min-width:0; max-width:100%; }
-.message > .message_infos > .mp-icons {
-  float:none!important; display:flex; flex-wrap:wrap; gap:8px;
-  list-style:none; padding:0; margin:0;
+body#phpbb .message > .message_infos > .mp-icons {
+  display:flex; flex-wrap:wrap; gap:8px; float:none!important;
+  list-style:none; margin:0; padding:0;
 }
-form > .container > .message > .message_profil {
+body#phpbb .message > .message_profil {
   grid-column:1!important; grid-row:2!important;
-  position:static!important; float:none!important;
+  position:static!important; float:none!important; transform:none!important;
   width:auto!important; min-width:0!important; max-width:100%!important;
-  margin:0!important; padding:18px 14px!important; box-sizing:border-box;
-  text-align:center; overflow-wrap:anywhere; border-right:1px solid var(--neutralDark);
+  margin:0!important; padding:18px 15px!important; box-sizing:border-box!important;
+  border-right:1px solid var(--neutralDark); text-align:center;
+  overflow:hidden!important; overflow-wrap:anywhere;
 }
-/* L'avatar peut etre directement dans le profil ou dans un lien. */
-.message > .message_profil > img,
-.message > .message_profil > a > img {
-  display:block!important; position:static!important; float:none!important;
-  transform:none!important; width:auto!important; height:auto!important;
-  min-width:0!important; min-height:0!important;
-  max-width:100%!important; max-height:240px!important;
-  margin:0 auto!important; object-fit:contain; border-radius:6px;
+body#phpbb .message > .message_profil img {
+  position:static!important; float:none!important; transform:none!important;
+  width:auto!important; height:auto!important; min-width:0!important; min-height:0!important;
+  max-width:100%!important; max-height:none!important;
+  margin-left:auto!important; margin-right:auto!important; box-sizing:border-box!important;
 }
-.message > .message_profil > .profile-mp {
+body#phpbb .message > .message_profil > :not(br) {
+  max-width:100%!important; min-width:0!important; box-sizing:border-box!important;
+}
+body#phpbb .message .profile-mp {
   display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:8px; margin-top:8px;
 }
-.message .profile-mp img { max-width:100%!important; height:auto!important; }
-form > .container > .message > .message_content.postbody.content {
+body#phpbb .message > .message_content.postbody.content {
   grid-column:2!important; grid-row:2!important;
-  position:static!important; float:none!important; clear:none!important;
+  position:static!important; float:none!important; clear:none!important; transform:none!important;
   width:auto!important; min-width:0!important; max-width:100%!important;
-  margin:0!important; padding:24px 28px!important; box-sizing:border-box;
+  margin:0!important; padding:24px 28px!important; box-sizing:border-box!important;
   line-height:1.7; overflow-wrap:anywhere; overflow-x:auto;
 }
-.message > .message_content.postbody.content img { max-width:100%!important; height:auto!important; }
-
-@media (max-width:700px) {
-  #privmsgs-menu { justify-content:flex-start; }
-  form[name="privmsg_list"] .mp_row { gap:12px!important; padding:12px!important; }
-  form > .container > .message { grid-template-columns:minmax(0,1fr)!important; grid-template-rows:auto auto auto!important; }
-  form > .container > .message > .message_profil {
-    grid-column:1!important; grid-row:2!important; border-right:0; border-bottom:1px solid var(--neutralDark);
-  }
-  .message > .message_profil > img,
-  .message > .message_profil > a > img { max-width:90px!important; max-height:140px!important; }
-  form > .container > .message > .message_content.postbody.content {
-    grid-column:1!important; grid-row:3!important; padding:18px!important;
-  }
-}
-
-/* COMPLEMENT V2 : uniquement les profils DANS les MP.
-   Ajouter apres le correctif V2, qui reste en place. */
-.message > .message_profil {
-  min-width: 0 !important;
-  box-sizing: border-box !important;
-}
-
-/* Cible aussi les avatars entoures de plusieurs elements HTML. */
-.message > .message_profil img {
-  width: auto !important;
-  height: auto !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
-  max-width: min(100%, 150px) !important;
-  max-height: 240px !important;
-  position: static !important;
-  float: none !important;
-  transform: none !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  box-sizing: border-box !important;
-  object-fit: contain !important;
-}
-
-.message > .message_profil > :not(br),
-.message > .message_profil a {
-  min-width: 0 !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-/* Les images des liens de contact gardent leur taille naturelle. */
-.message > .message_profil .profile-mp img {
-  max-width: 100% !important;
-  max-height: 32px !important;
-}
-
-@media (max-width: 700px) {
-  .message > .message_profil img {
-    max-width: min(100%, 90px) !important;
-    max-height: 140px !important;
-  }
+body#phpbb .message > .message_content.postbody.content img {max-width:100%!important; height:auto!important;}
+@media(max-width:700px) {
+  #privmsgs-menu {justify-content:flex-start;}
+  form[name="privmsg_list"] .mp_row {gap:12px!important;padding:12px!important;}
+  body#phpbb .message:has(> .message_profil) {grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto auto auto!important;}
+  body#phpbb .message > .message_profil {grid-column:1!important;grid-row:2!important;border-right:0;border-bottom:1px solid var(--neutralDark);}
+  body#phpbb .message > .message_profil img {max-width:110px!important;max-height:176px!important;object-fit:contain;}
+  body#phpbb .message > .message_content.postbody.content {grid-column:1!important;grid-row:3!important;padding:18px!important;}
 }
 
 
-/* Lecture des MP uniquement */
-html body form .container > .message {
-  display: grid !important;
-  grid-template-columns: 252px minmax(0, 1fr) !important;
-  grid-template-rows: auto 1fr !important;
+/* MP : un seul bouton PROFIL sous le pseudo */
+body#phpbb .message .message_profil .profile-mp {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 12px !important;
   gap: 0 !important;
-  width: 100% !important;
-  min-width: 0 !important;
-  box-sizing: border-box !important;
+  font-size: 0 !important;
 }
 
-html body form .container > .message > .message_infos {
-  grid-column: 1 / -1 !important;
-  grid-row: 1 !important;
-  min-width: 0 !important;
+/* Masquer les éléments de contact existants */
+body#phpbb .message .message_profil .profile-mp > *,
+body#phpbb .message .message_profil .profile-mp img {
+  display: none !important;
 }
 
-html body form .container > .message > .message_profil {
-  grid-column: 1 !important;
-  grid-row: 2 !important;
-  position: static !important;
-  float: none !important;
-  transform: none !important;
-  width: auto !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 18px 15px !important;
-  box-sizing: border-box !important;
-  overflow: hidden !important;
-  overflow-wrap: anywhere;
+/* Le premier lien correspond à PROFILE_IMG dans ton template */
+body#phpbb .message .message_profil .profile-mp > a:first-of-type {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  padding: 10px 18px;
+  box-sizing: border-box;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 0 !important;
+  text-decoration: none !important;
+  transition: background-color .2s ease;
 }
 
-html body form .container > .message > .message_profil img {
-  position: static !important;
-  float: none !important;
-  transform: none !important;
-  width: auto !important;
-  height: auto !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
-  max-width: 220px !important;
-  max-height: none !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  box-sizing: border-box !important;
+body#phpbb .message .message_profil .profile-mp > a:first-of-type > * {
+  display: none !important;
 }
 
-html body form .container > .message > .message_content.postbody.content {
-  grid-column: 2 !important;
-  grid-row: 2 !important;
-  position: static !important;
-  float: none !important;
-  clear: none !important;
-  transform: none !important;
-  width: auto !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 24px 28px !important;
-  box-sizing: border-box !important;
-  overflow-wrap: anywhere;
-  overflow-x: auto;
+body#phpbb .message .message_profil .profile-mp > a:first-of-type::before {
+  content: none !important;
 }
 
-@media (max-width: 700px) {
-  html body form .container > .message {
-    grid-template-columns: minmax(0, 1fr) !important;
-    grid-template-rows: auto auto auto !important;
-  }
+body#phpbb .message .message_profil .profile-mp > a:first-of-type::after {
+  content: "PROFIL" !important;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
 
-  html body form .container > .message > .message_profil {
-    grid-column: 1 !important;
-    grid-row: 2 !important;
-    border-right: 0 !important;
-    border-bottom: 1px solid var(--neutralDark);
-  }
+body#phpbb .message .message_profil .profile-mp > a:first-of-type:hover {
+  background: var(--neutralDark, #e5ddd3);
+}
 
-  html body form .container > .message > .message_profil img {
-    max-width: 110px !important;
-    max-height: 176px !important;
-    object-fit: contain !important;
-  }
-
-  html body form .container > .message > .message_content.postbody.content {
-    grid-column: 1 !important;
-    grid-row: 3 !important;
-    padding: 18px !important;
-  }
+body#phpbb .message .message_profil .profile-mp > a:first-of-type:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
 }
