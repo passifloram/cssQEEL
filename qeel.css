@@ -7169,7 +7169,7 @@ form[name="privmsg_list"] .mp_infos > a.topictitle {
   white-space:normal!important; line-height:1.4; text-decoration:none;
 }
 form[name="privmsg_list"] .mp_infos > span {
-  grid-column:1; grid-row:2; min-width:0; font-size:12px; line-height:1.5;
+  grid-column:1; grid-row:2; min-width:0; font-size:15px; line-height:1.5;
 }
 form[name="privmsg_list"] .mp_infos > input[type="checkbox"] {
   grid-column:2; grid-row:1 / 3; justify-self:center; align-self:center;
@@ -7307,7 +7307,7 @@ form[name="privmsg_list"] .mp_infos {
 
 form[name="privmsg_list"] .mp_infos > a.topictitle,
 form[name="privmsg_list"] .mp_infos > span {
-  font-size: 13px !important;
+  font-size: 15px !important;
   line-height: 1.4 !important;
 }
 
