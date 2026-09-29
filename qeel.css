@@ -7292,3 +7292,25 @@ body#phpbb .message .message_profil .profile-mp > a:first-of-type:focus-visible 
   outline: 2px solid currentColor;
   outline-offset: 3px;
 }
+
+
+
+/* Liste des MP : texte plus lisible et cartes plus compactes */
+form[name="privmsg_list"] .mp_row {
+  padding: 10px 12px !important;
+  gap: 12px !important;
+}
+
+form[name="privmsg_list"] .mp_infos {
+  row-gap: 3px !important;
+}
+
+form[name="privmsg_list"] .mp_infos > a.topictitle,
+form[name="privmsg_list"] .mp_infos > span {
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+
+form[name="privmsg_list"] .mp_infos > span * {
+  font-size: inherit !important;
+}
