@@ -7244,3 +7244,46 @@ form > .container > .message > .message_content.postbody.content {
   }
 }
 
+/* COMPLEMENT V2 : uniquement les profils DANS les MP.
+   Ajouter apres le correctif V2, qui reste en place. */
+.message > .message_profil {
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Cible aussi les avatars entoures de plusieurs elements HTML. */
+.message > .message_profil img {
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: min(100%, 150px) !important;
+  max-height: 240px !important;
+  position: static !important;
+  float: none !important;
+  transform: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+  object-fit: contain !important;
+}
+
+.message > .message_profil > :not(br),
+.message > .message_profil a {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Les images des liens de contact gardent leur taille naturelle. */
+.message > .message_profil .profile-mp img {
+  max-width: 100% !important;
+  max-height: 32px !important;
+}
+
+@media (max-width: 700px) {
+  .message > .message_profil img {
+    max-width: min(100%, 90px) !important;
+    max-height: 140px !important;
+  }
+}
