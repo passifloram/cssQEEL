@@ -7227,7 +7227,11 @@ body#phpbb .message > .message_content.postbody.content {
   margin:0!important; padding:24px 28px!important; box-sizing:border-box!important;
   line-height:1.7; overflow-wrap:anywhere; overflow-x:auto;
 }
-body#phpbb .message > .message_content.postbody.content img {max-width:100%!important; height:auto!important;}
+/* Images des MP : conserver les dimensions indiquées dans le message. */
+body#phpbb .message > .message_content.postbody.content img {
+  max-width: 100%;
+  object-fit: contain;
+}
 @media(max-width:700px) {
   #privmsgs-menu {justify-content:flex-start;}
   form[name="privmsg_list"] .mp_row {gap:12px!important;padding:12px!important;}
